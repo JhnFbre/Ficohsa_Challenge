@@ -13,6 +13,12 @@ resultados, y la descripción del detalle (buscador a libre eleccion).
 - Resultados        (/items?search=)
 - Detalles          (/items/:id)
 
-# Enlace de api externo utilizado: "https://dummyjson.com/products"
+# Enlace de api externo utilizado: 
+  "https://dummyjson.com/products"
 
+# Resultados
 
+- Dos carpetas de back-end en donde:
+  - Se carga los resultados de una base local
+  - Se carga los resultados de un api externo (Recomendable usar para no crear registros)
+- Front-end dinámico, las urls responden y consultan a la base, según corresponda
