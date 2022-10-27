@@ -24,3 +24,4 @@ resultados, y la descripción del detalle (buscador a libre eleccion).
 - Front-end dinámico, las urls responden y consultan a la base, según corresponda
 - Framework de estilos: BootStrap 
 - Evidencia con imágenes
+- En caso de probar base de datos local: mongorestore --db ficohsachallenge --drop .\backup\04092021\ficohsachallenge\
