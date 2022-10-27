@@ -22,4 +22,5 @@ resultados, y la descripción del detalle (buscador a libre eleccion).
   - Se carga los resultados de una base local
   - Se carga los resultados de un api externo (Recomendable usar para no crear registros)
 - Front-end dinámico, las urls responden y consultan a la base, según corresponda
+- Framework de estilos: BootStrap 
 - Evidencia con imágenes
