@@ -16,6 +16,7 @@ app.use(cors({origin: true, credentials: true}))
 //Rutas
 app.use(express.static(path.join(__dirname, 'build')));;
 app.use('/api/products',require('./routes/products.routes'))
+app.use('/api/items',require('./routes/items.routes'))
 
 
 app.listen(PUERTO, ()=>{
