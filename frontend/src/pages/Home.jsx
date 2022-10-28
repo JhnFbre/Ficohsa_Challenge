@@ -2,15 +2,11 @@ import React from 'react'
 import Buscador from '../components/buscador'
 import Resultado from '../components/resultados'
 
-const Home = ({estadoResultados, productos, productosDinamic, estadoShowResultados, setProductosDinamic, setEstadoShowResultados}) => {
+const Home = ({productos, estadoResultados}) => {
   return (
     <div>
-        <Buscador productos={productos} 
-                  setProductosDinamic={setProductosDinamic} 
-                  setEstadoShowResultados={setEstadoShowResultados} />
-        {estadoResultados ? (
-            <Resultado productos={productosDinamic} 
-                       estadoShowResultados={estadoShowResultados} />):(<div></div>)}
+        <Buscador />
+        {estadoResultados ? (<Resultado productos={productos}/>) :(<div></div>)}
     </div>
   )
 }

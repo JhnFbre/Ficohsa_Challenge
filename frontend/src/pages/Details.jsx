@@ -7,9 +7,10 @@ import Regreso from '../components/btnRegreso'
 //Lectura de datos
 import axios from 'axios'
 
-const Details = ({productos, setProductosDinamic}) => {
+const Details = () => {
 
     const [producto, setProducto] = useState({})
+    const [estadoDetalle, setEstadoDetalle] = useState(false)
     
     const location = useLocation();
 
@@ -26,34 +27,37 @@ const Details = ({productos, setProductosDinamic}) => {
             .then(response=>{
                 singleProd = response.data
                 setProducto(singleProd)
+                setEstadoDetalle(true)
             })
         }       
         
-      }
-      const restablecerDinamic = () =>{
-        setProductosDinamic(productos)
-    }
+    }    
   return (
     <div>
-        <Regreso restablecerFilas={restablecerDinamic} />    
-        <div className="container mt-5">
-            <div className="detail">
-                <div className="card">
-                    <div className="card-header">
-                        <span className="b">{producto.nombre}</span>
-                        <br />
-                        {producto._id}
-                    </div>
-                    <div className="card-body">
-                        <img src={producto.imagen} alt={producto.nombre} />
-                        <p className='text-justify mt-3 '>
-                            <span className="b">Descripción: </span> {producto.descripcion}
-                        </p>
+        <Regreso />
+        {   estadoDetalle ?
+            (Object.keys(producto).length > 0 ? (
+                <div className="container mt-5">
+                <div className="detail">
+                    <div className="card">
+                        <div className="card-header">
+                            <span className="b">{producto.nombre}</span>
+                            <br />
+                            {producto._id}
+                        </div>
+                        <div className="card-body">
+                            <img src={producto.imagen} alt={producto.nombre} />
+                            <p className='text-justify mt-3 '>
+                                <span className="b">Descripción: </span> {producto.descripcion}
+                            </p>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            ) : (<div><p className='text-center'>No hay un producto con ese ID</p></div>)) :''
+        }
+        
     </div>
   )
 }

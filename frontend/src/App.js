@@ -20,7 +20,6 @@ import Header from './components/header'
 
 function App() {
   const [productos, setProductos] = useState([])
-  const [productosDinamic, setProductosDinamic] = useState([])
   const [estadoResultados, setEstadoResultados] = useState(false)
 
   useEffect(()=>{  
@@ -35,7 +34,6 @@ function App() {
             return product
           })
           setProductos(arrayProd)    
-          setProductosDinamic(arrayProd)    
           setEstadoResultados(true)                 
         })
   }
@@ -45,18 +43,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={
-            <Home estadoResultados={estadoResultados} 
-                  productos={productos} 
-                  productosDinamic={productosDinamic} 
-                  setProductosDinamic={setProductosDinamic} />} exact />
-            <Route path="items" element={
-              <Results estadoResultados={estadoResultados} 
-                       productos={productos} 
-                       productosDinamic={productosDinamic} 
-                       setProductosDinamic={setProductosDinamic} />} />
-            <Route path="items/:id" element={
-              <Details productos={productos}
-                       setProductosDinamic={setProductosDinamic}  />} />
+            <Home estadoResultados={estadoResultados} productos={productos} />} exact />
+          <Route path="items" element={
+            <Results estadoResultados={estadoResultados} />} />
+          <Route path="items/:id" element={
+            <Details />} />
           <Route path="*" element={<Error />} />          
         </Routes>
       </BrowserRouter>
