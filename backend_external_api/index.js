@@ -13,10 +13,14 @@ app.use(express.json())
 app.use(cors({origin: true, credentials: true}))
 
 //Rutas
-app.use(express.static(path.join(__dirname, 'build')));;
 app.use('/api/products',require('./routes/products.routes'))
 app.use('/api/items',require('./routes/items.routes'))
 
+app.use(express.static(path.join(__dirname, 'build')))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/build/index.html'));
+});
 
 app.listen(PUERTO, ()=>{
     console.log(`Puerto ${PUERTO} habilitado`)

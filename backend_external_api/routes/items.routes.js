@@ -14,7 +14,7 @@ router.get('/', async (req, res)=>{
     .then( resultado =>{        
         const productos = []
         resultado.products.forEach(element => {     
-            if(element.title.includes(query) || element.category.includes(query)){
+            if(element.title.toLocaleLowerCase().includes(query.toLocaleLowerCase()) || element.category.toLocaleLowerCase().includes(query.toLocaleLowerCase())){
                 let producto = {
                     _id: element.id,
                     nombre: element.title, 
