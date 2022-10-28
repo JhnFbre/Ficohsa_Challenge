@@ -46,13 +46,10 @@ router.get('/:id', async (req, res)=>{
             descripcion: item[0].description,
             imagen: item[0].thumbnail
         }        
-        return producto;
-        
+        return producto;        
         
     }).catch(()=> {return {}})    
     res.json(respuesta)
 } )
-
-  
 
 module.exports = router
