@@ -1,4 +1,4 @@
-# Ficohsa Challenge!!! front-end
+# Challenge front-end
 
 A desarrollar:
 La aplicación consta de tres componentes principales: la caja de búsqueda, la visualización de
